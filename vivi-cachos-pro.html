@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Studio Vivi Cachos | Especialista em Cabelos Cacheados, Crespos e Ondulados — Itapira, SP</title>
+<meta name="description" content="Studio Vivi Cachos: salão especializado em cabelos cacheados, crespos e ondulados em Itapira, SP. Cortes personalizados, tratamentos capilares, transição capilar e consultoria home care. Nota 5,0 com 32 avaliações.">
+<meta name="theme-color" content="#241309">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,680;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coffee:#241309;
+    --coffee-2:#2E1B0D;
+    --parchment:#FAF4EA;
+    --parchment-2:#F1E6D4;
+    --gold:#C68A3D;
+    --gold-deep:#9C6A29;
+    --wine:#7A2E39;
+    --wine-deep:#5F2129;
+    --ink:#2B190C;
+    --ink-soft:#6B5140;
+    --line: rgba(43,25,12,0.13);
+    --shadow: 0 10px 30px -12px rgba(43,25,12,0.25);
+    --radius: 14px;
+    font-family:'Work Sans', system-ui, -apple-system, sans-serif;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top:76px; overflow-x:hidden;}
+  body{background:var(--parchment); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.5;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  ul{list-style:none;}
+  button{font:inherit; cursor:pointer;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:4px;}
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --parchment:#17100A;
+      --parchment-2:#20160D;
+      --ink:#F3E6D4;
+      --ink-soft:#C9AD8F;
+      --line: rgba(243,230,212,0.13);
+      --shadow: 0 10px 30px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --parchment:#17100A; --parchment-2:#20160D; --ink:#F3E6D4; --ink-soft:#C9AD8F;
+    --line: rgba(243,230,212,0.13); --shadow: 0 10px 30px -12px rgba(0,0,0,0.5);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- SKIP LINK ---------- */
+  .skip-link{
+    position:absolute; left:12px; top:-60px; background:var(--wine); color:#fff;
+    padding:10px 16px; border-radius:8px; z-index:200; transition:top .2s ease; font-size:0.9rem;
+  }
+  .skip-link:focus{top:12px;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; top:env(safe-area-inset-top,0px); z-index:100;
+    background:color-mix(in srgb, var(--parchment) 90%, transparent);
+    backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; max-width:1120px; margin:0 auto; min-height:64px;
+  }
+  .brand{
+    font-family:'Fraunces',serif; font-weight:680; font-size:1.12rem;
+    display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);
+  }
+  .brand .mark{width:28px; height:28px; flex-shrink:0;}
+  .nav-links{display:flex; gap:30px; font-size:0.92rem; color:var(--ink-soft);}
+  .nav-links a{text-decoration:none; position:relative; padding:4px 0;}
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1.5px;
+    background:var(--gold-deep); transition:width .25s ease;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .nav-cta{
+    background:var(--wine); color:#F8EFE3; border-radius:100px; padding:10px 20px;
+    font-size:0.88rem; text-decoration:none; font-weight:600; white-space:nowrap;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    box-shadow:0 4px 14px -4px rgba(122,46,57,0.5);
+  }
+  .nav-cta:hover{background:var(--wine-deep); transform:translateY(-1px); box-shadow:0 8px 20px -6px rgba(122,46,57,0.6);}
+  .nav-cta:active{transform:translateY(0) scale(0.97);}
+
+  .menu-btn{
+    display:none; background:none; border:none; width:40px; height:40px;
+    align-items:center; justify-content:center; color:var(--ink); border-radius:8px;
+  }
+  .menu-btn:hover{background:var(--parchment-2);}
+  .menu-btn svg{width:22px; height:22px;}
+
+  @media (max-width:840px){
+    .nav-links{display:none;}
+    .menu-btn{display:flex;}
+  }
+
+  /* ---------- MOBILE MENU ---------- */
+  .mobile-menu{
+    position:fixed; inset:0; z-index:99; background:var(--parchment);
+    display:flex; flex-direction:column; padding:96px 32px 40px;
+    transform:translateX(100%); transition:transform .32s cubic-bezier(.4,0,.2,1);
+    visibility:hidden;
+  }
+  .mobile-menu.open{transform:translateX(0); visibility:visible;}
+  .mobile-menu a{
+    font-family:'Fraunces',serif; font-size:1.7rem; font-weight:500; text-decoration:none;
+    color:var(--ink); padding:16px 0; border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .nav-cta{align-self:flex-start; margin-top:28px; padding:16px 28px; font-size:1rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; overflow:hidden; padding:68px 0 48px;}
+  .hero-inner{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:44px; align-items:center;
+    max-width:1120px; margin:0 auto; padding:0 24px;
+  }
+  @media (max-width:840px){ .hero-inner{grid-template-columns:1fr; gap:12px;} }
+
+  .badge-row{
+    display:inline-flex; align-items:center; gap:10px; margin-bottom:24px; color:var(--ink-soft);
+    font-size:0.86rem; background:var(--parchment-2); padding:8px 16px; border-radius:100px;
+    border:1px solid var(--line);
+  }
+  .stars{color:var(--gold); letter-spacing:1px; font-size:0.95rem;}
+  .dot{width:3px; height:3px; border-radius:50%; background:var(--ink-soft); flex-shrink:0;}
+
+  .hero h1{
+    font-family:'Fraunces',serif; font-weight:560; font-size:clamp(2.5rem,6vw,4.4rem);
+    line-height:1.0; margin-bottom:22px; letter-spacing:-0.01em;
+  }
+  .hero h1 em{font-style:italic; font-weight:400; color:var(--gold-deep);}
+  .hero p.lede{font-size:1.08rem; line-height:1.65; color:var(--ink-soft); max-width:46ch; margin-bottom:34px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:9px; padding:15px 28px; border-radius:100px;
+    text-decoration:none; font-size:0.96rem; font-weight:600; border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    min-height:48px;
+  }
+  .btn svg{width:18px; height:18px; flex-shrink:0;}
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--wine); color:#F8EFE3; box-shadow:0 6px 18px -6px rgba(122,46,57,0.55);}
+  .btn-primary:hover{background:var(--wine-deep); transform:translateY(-2px); box-shadow:0 10px 22px -6px rgba(122,46,57,0.6);}
+  .btn-ghost{border-color:var(--line); color:var(--ink); background:transparent;}
+  .btn-ghost:hover{border-color:var(--gold-deep); background:var(--parchment-2); transform:translateY(-2px);}
+
+  .hero-art{position:relative; aspect-ratio:1/1; max-width:440px; margin:0 auto;}
+  .hero-art svg{width:100%; height:100%;}
+  .curl-path{fill:none; stroke:var(--gold-deep); stroke-width:2.4; stroke-linecap:round;
+    stroke-dasharray:900; stroke-dashoffset:900; animation:draw 2.4s cubic-bezier(.4,.1,.2,1) forwards;}
+  .curl-path.c2{stroke:var(--wine); animation-delay:.12s; stroke-width:2;}
+  .curl-path.c3{stroke:var(--ink-soft); animation-delay:.24s; stroke-width:1.6; opacity:.65;}
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:84px 0;}
+  .eyebrow{font-family:'Fraunces',serif; font-style:italic; font-weight:500; color:var(--gold-deep); font-size:1.02rem; margin-bottom:10px;}
+  h2.section-title{font-family:'Fraunces',serif; font-weight:560; font-size:clamp(1.9rem,3.4vw,2.6rem); margin-bottom:18px; line-height:1.1; max-width:20ch;}
+  .section-intro{color:var(--ink-soft); max-width:60ch; line-height:1.65; font-size:1.02rem;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--parchment-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;}
+  @media (max-width:840px){ .about-grid{grid-template-columns:1fr;} }
+  .about blockquote{font-family:'Fraunces',serif; font-weight:500; font-style:italic; font-size:1.35rem; line-height:1.55; margin-bottom:20px; color:var(--ink); border-left:2px solid var(--gold-deep); padding-left:22px;}
+  .about cite{font-style:normal; font-size:0.86rem; color:var(--ink-soft); display:block; margin-top:10px; padding-left:22px;}
+
+  /* ---------- SERVICES ---------- */
+  .services-list{margin-top:38px; border-top:1px solid var(--line);}
+  .service-row{
+    display:grid; grid-template-columns:44px 1fr auto; gap:20px; align-items:baseline;
+    padding:26px 4px; border-bottom:1px solid var(--line); border-radius:8px;
+    transition:background .25s ease, padding-left .25s ease;
+  }
+  .service-row:hover{background:var(--parchment-2); padding-left:14px;}
+  .service-row .idx{font-family:'Fraunces',serif; color:var(--gold-deep); font-size:1rem; font-style:italic;}
+  .service-row h3{font-family:'Fraunces',serif; font-weight:560; font-size:1.25rem; margin-bottom:6px;}
+  .service-row p{color:var(--ink-soft); font-size:0.95rem; max-width:52ch;}
+  .service-row .price{color:var(--ink-soft); font-size:0.9rem; white-space:nowrap; font-weight:500;}
+
+  /* ---------- TIPS ---------- */
+  .tips{background:var(--coffee); color:var(--parchment);}
+  .tips .eyebrow{color:var(--gold);}
+  .tips h2.section-title{color:var(--parchment);}
+  .tips .section-intro{color:#C9AD8F;}
+  .tips-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:44px; background:rgba(246,238,225,0.14); border:1px solid rgba(246,238,225,0.14); border-radius:var(--radius); overflow:hidden;}
+  @media (max-width:780px){ .tips-grid{grid-template-columns:1fr;} }
+  .tip{background:var(--coffee-2); padding:32px 28px; transition:background .25s ease;}
+  .tip:hover{background:#3A2413;}
+  .tip .tip-num{font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:0.95rem; margin-bottom:12px; display:block;}
+  .tip h4{font-family:'Fraunces',serif; font-weight:560; font-size:1.08rem; margin-bottom:10px; color:var(--parchment);}
+  .tip p{font-size:0.92rem; line-height:1.6; color:#C9AD8F;}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-head{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;}
+  .rating-summary{display:flex; align-items:center; gap:14px; background:var(--parchment-2); padding:14px 22px; border-radius:100px; border:1px solid var(--line);}
+  .rating-summary .num{font-family:'Fraunces',serif; font-size:1.6rem; font-weight:680;}
+  .reviews-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:40px;}
+  @media (max-width:780px){ .reviews-grid{grid-template-columns:1fr;} }
+  .review-card{
+    border:1px solid var(--line); border-radius:var(--radius); padding:30px; background:var(--parchment-2);
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .review-card:hover{transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--gold-deep);}
+  .review-card .stars{display:block; margin-bottom:16px;}
+  .review-card p{font-size:1rem; line-height:1.6; margin-bottom:18px; color:var(--ink);}
+  .review-card .who{font-size:0.88rem; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
+  .review-card .avatar{width:28px; height:28px; border-radius:50%; background:var(--gold-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:0.82rem; flex-shrink:0;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{border-top:1px solid var(--line);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  @media (max-width:840px){ .contact-grid{grid-template-columns:1fr;} }
+  .info-row{display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--line);}
+  .info-row:first-child{padding-top:0;}
+  .info-row .ic{width:22px; flex-shrink:0; color:var(--gold-deep); margin-top:2px;}
+  .info-row .lbl{font-size:0.82rem; color:var(--ink-soft); margin-bottom:4px; text-transform:uppercase; letter-spacing:0.04em;}
+  .info-row .val{font-size:1.02rem; line-height:1.5;}
+  .info-row a{text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .2s ease, color .2s ease;}
+  .info-row a:hover{border-color:var(--gold-deep); color:var(--gold-deep);}
+
+  .map-frame{
+    border:1px solid var(--line); border-radius:var(--radius); padding:36px; background:var(--coffee);
+    color:var(--parchment); display:flex; flex-direction:column; justify-content:space-between; min-height:300px;
+    position:relative; overflow:hidden;
+  }
+  .map-frame svg.bgcurl{position:absolute; right:-40px; bottom:-40px; width:220px; height:220px; opacity:0.12; stroke:var(--gold); fill:none; stroke-width:2;}
+  .hours-note{font-size:0.85rem; color:#C9AD8F; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.04em;}
+  .map-frame .addr{font-family:'Fraunces',serif; font-size:1.3rem; font-style:italic; line-height:1.4; margin-bottom:26px; position:relative; z-index:1;}
+  .map-frame .btn-primary{align-self:flex-start; position:relative; z-index:1;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:44px 24px 32px; border-top:1px solid var(--line);}
+  .footer-inner{max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;}
+  .fbrand{font-family:'Fraunces',serif; font-style:italic; font-size:1.05rem; color:var(--ink);}
+  footer .fmeta{font-size:0.85rem; color:var(--ink-soft); text-align:right;}
+  footer .fmeta a{text-decoration:none; border-bottom:1px solid var(--line);}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wa{
+    position:fixed; right:20px; bottom:calc(20px + env(safe-area-inset-bottom,0px)); z-index:90;
+    width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 22px -6px rgba(37,211,102,0.6); text-decoration:none; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .float-wa:hover{transform:scale(1.08); box-shadow:0 10px 26px -6px rgba(37,211,102,0.7);}
+  .float-wa svg{width:28px; height:28px;}
+  @media (max-width:840px){ .float-wa{width:54px; height:54px; right:16px; bottom:calc(16px + env(safe-area-inset-bottom,0px));} }
+</style>
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#topo" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 30C6 14 20 22 20 12C20 5 14 5 12 10" stroke="#C68A3D" stroke-width="3" stroke-linecap="round"/></svg>
+      Vivi Cachos
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#cuidados">Cuidados</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="https://wa.me/5519997396314" target="_blank" rel="noopener">Agendar</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Navegação móvel">
+  <a href="#sobre">Sobre</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#cuidados">Cuidados</a>
+  <a href="#avaliacoes">Avaliações</a>
+  <a href="#contato">Contato</a>
+  <a class="nav-cta" href="https://wa.me/5519997396314" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+</nav>
+
+<main id="conteudo">
+<section class="hero" id="topo">
+  <div class="hero-inner">
+    <div>
+      <div class="badge-row">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span>5,0 · 32 avaliações</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Centro, Itapira – SP</span>
+      </div>
+      <h1>Cada cacho tem<br>a sua <em>história</em>.</h1>
+      <p class="lede">Um espaço dedicado a cabelos cacheados, crespos e ondulados — cortes personalizados, tratamentos e transição capilar com atendimento individualizado.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/5519997396314" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 1.67c2.19 0 4.24.85 5.79 2.4a8.2 8.2 0 0 1 2.41 5.84c0 4.55-3.71 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.55 3.71-8.24 8.3-8.24zm-3.53 4.4c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02 0 1.19.87 2.35.99 2.51.12.16 1.7 2.72 4.21 3.7 2.08.82 2.5.66 2.95.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.71-1.68-.79-.22-.08-.39-.12-.55.12-.16.25-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.25-.02-.38.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+5519997396314">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (19) 99739-6314
+        </a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <path class="curl-path" d="M60 320 C 30 260, 30 190, 90 150 C 150 110, 220 130, 220 190 C 220 240, 170 250, 150 220 C 135 198, 150 175, 175 178"/>
+        <path class="curl-path c2" d="M340 90 C 300 70, 250 80, 240 130 C 232 172, 270 195, 300 175 C 322 160, 315 135, 295 138"/>
+        <path class="curl-path c3" d="M110 60 C 160 40, 210 55, 205 95 C 201 128, 165 138, 150 115"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about reveal" id="sobre">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">A profissional</p>
+      <h2 class="section-title">Cuidar do cabelo é cuidar da autoestima.</h2>
+      <p class="section-intro">O Studio Vivi Cachos é especializado em cabelos naturais, com foco na saúde capilar e na valorização de cada tipo de cacho, crespo ou ondulado.</p>
+    </div>
+    <div>
+      <blockquote>
+        "Meu atendimento é feito de forma individualizada, respeitando a identidade e as necessidades de cada cliente. Cuidar dos cabelos é também cuidar da confiança e do bem-estar."
+        <cite>— Da proprietária, Studio Vivi Cachos</cite>
+      </blockquote>
+      <p class="section-intro">Além dos serviços especializados, o studio também trabalha com indicação e venda de produtos para manter os cachos saudáveis e bonitos no dia a dia, em casa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap reveal">
+    <p class="eyebrow">O que fazemos</p>
+    <h2 class="section-title">Serviços</h2>
+    <p class="section-intro">Atendimento individualizado para cabelos cacheados, crespos e ondulados — do corte à manutenção em casa.</p>
+    <div class="services-list">
+      <div class="service-row">
+        <span class="idx">I</span>
+        <div><h3>Corte para cachos</h3><p>Corte personalizado, respeitando o formato e o comportamento natural de cada cacho, crespo ou ondulado.</p></div>
+        <span class="price">Sob consulta</span>
+      </div>
+      <div class="service-row">
+        <span class="idx">II</span>
+        <div><h3>Tratamentos capilares</h3><p>Cuidados voltados à saúde e hidratação dos fios, pensados para a manutenção da textura natural.</p></div>
+        <span class="price">Sob consulta</span>
+      </div>
+      <div class="service-row">
+        <span class="idx">III</span>
+        <div><h3>Transição capilar</h3><p>Orientação e acompanhamento para quem está deixando o alisamento para trás.</p></div>
+        <span class="price">Sob consulta</span>
+      </div>
+      <div class="service-row">
+        <span class="idx">IV</span>
+        <div><h3>Consultoria home care</h3><p>Orientação de produtos e rotina para manter o cuidado com os cachos em casa.</p></div>
+        <span class="price">Sob consulta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tips" id="cuidados">
+  <div class="wrap reveal">
+    <p class="eyebrow">Enquanto isso, em casa</p>
+    <h2 class="section-title">Cuidados básicos para os cachos</h2>
+    <p class="section-intro">Algumas práticas gerais de manutenção — o ideal é sempre ajustar a rotina com orientação profissional.</p>
+    <div class="tips-grid">
+      <div class="tip">
+        <span class="tip-num">01</span>
+        <h4>Hidrate com frequência</h4>
+        <p>Cabelos cacheados e crespos tendem a ressecar mais rápido. Hidratações regulares ajudam a manter a definição e reduzir o frizz.</p>
+      </div>
+      <div class="tip">
+        <span class="tip-num">02</span>
+        <h4>Evite sulfatos agressivos</h4>
+        <p>Shampoos muito ressecantes retiram a oleosidade natural que os cachos precisam para se definir bem.</p>
+      </div>
+      <div class="tip">
+        <span class="tip-num">03</span>
+        <h4>Penteie com o cabelo molhado</h4>
+        <p>Desembaraçar no chuveiro, com condicionador, reduz a quebra dos fios em relação ao cabelo seco.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avaliacoes">
+  <div class="wrap reveal">
+    <div class="reviews-head">
+      <div>
+        <p class="eyebrow">Quem já passou por aqui</p>
+        <h2 class="section-title">Avaliações</h2>
+      </div>
+      <div class="rating-summary">
+        <span class="num">5,0</span>
+        <div>
+          <span class="stars" aria-hidden="true">★★★★★</span><br>
+          <span style="font-size:0.85rem; color:var(--ink-soft);">32 avaliações</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Maravilhosa! Nunca achei que era possível meu cabelo cacheado ficar assim, achei que seria impossível — mas ficou lindíssimo. Uma profissional super simpática e atenciosa."</p>
+        <div class="who"><span class="avatar" aria-hidden="true">C</span> Avaliação no Google · há um mês</div>
+      </div>
+      <div class="review-card">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Quero deixar registrado o quanto eu amo esse salão! O atendimento é impecável e o ambiente é muito acolhedor. A profissional é extremamente atenciosa."</p>
+        <div class="who"><span class="avatar" aria-hidden="true">J</span> Julia Gomes · há um mês</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal" id="contato">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow">Visite o studio</p>
+        <h2 class="section-title">Contato</h2>
+        <div class="info-row">
+          <div class="ic" aria-hidden="true">📍</div>
+          <div><div class="lbl">Endereço</div><div class="val">Galeria Sarkis — R. José Bonifácio, 394, Sl 3<br>Centro, Itapira - SP, 13970-190</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic" aria-hidden="true">📞</div>
+          <div><div class="lbl">Telefone</div><div class="val"><a href="tel:+5519997396314">(19) 99739-6314</a></div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic" aria-hidden="true">🕐</div>
+          <div><div class="lbl">Horário</div><div class="val">Consulte os horários de atendimento<br><span style="color:var(--ink-soft); font-size:0.88rem;">Horários sujeitos a alteração — confirme por telefone.</span></div></div>
+        </div>
+      </div>
+      <div class="map-frame" id="localizacao">
+        <svg class="bgcurl" viewBox="0 0 200 200" aria-hidden="true"><path d="M20 160 C 10 120, 20 80, 60 65 C 100 50, 140 65, 135 100"/></svg>
+        <div>
+          <p class="hours-note">Horários sujeitos a alteração</p>
+          <p class="addr">Galeria Sarkis, R. José Bonifácio, 394 — Centro, Itapira, SP</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Galeria+Sarkis+R.+Jos%C3%A9+Bonifacio+394+Centro+Itapira+SP" target="_blank" rel="noopener">Ver rota →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="fbrand">Studio Vivi Cachos</div>
+    <div class="fmeta">Centro, Itapira - SP · <a href="tel:+5519997396314">(19) 99739-6314</a></div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5519997396314" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 1.67c2.19 0 4.24.85 5.79 2.4a8.2 8.2 0 0 1 2.41 5.84c0 4.55-3.71 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.55 3.71-8.24 8.3-8.24zm-3.53 4.4c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02 0 1.19.87 2.35.99 2.51.12.16 1.7 2.72 4.21 3.7 2.08.82 2.5.66 2.95.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.71-1.68-.79-.22-.08-.39-.12-.55.12-.16.25-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.25-.02-.38.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42z"/></svg>
+</a>
+
+<script>
+  (function(){
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu(){
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+    menuBtn.addEventListener('click', function(){
+      var isOpen = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.12});
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
